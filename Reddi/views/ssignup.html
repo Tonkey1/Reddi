@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/signup.css">
+    <!--fa fa icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+
+<body>
+<div class="signupform">
+<!--action for backend-->
+<form action="" id="ssignup" method="post">
+    <!--page 1-->
+
+        <h2 class="formtitle" style="color:lightseagreen;">Sign up as Tenant</h2>
+    <h3 class="formtext">You are a landlord? Please sign up <a href="lsignup" style="color:cadetblue">here.</a></h3>
+        <h2 class="formtitle">Account Details</h2>
+        <br>
+        <input type="email" id = "email" name="email" placeholder="Email"/>
+        <input type="text" id = "password1" name="psw" placeholder="Password"/>
+        <input type="text" id = "password2" name="confirmpsw" placeholder="Confirm Passward"/>
+
+<hr>
+
+    <!--page 2-->
+
+        <h2 class="formtitle">Personal Profiles</h2>
+        <br>
+        <input type="text" id = "name" name="uname" placeholder="Name"/>
+        <input type="number" id = "contact" name="contact" placeholder="Phone Number"/>
+
+        <div class="radiobox" id = "gender">
+            <p>Gender:</p>
+            <div class="pretty p-default p-round">
+                <input type="radio" name="gender" id="male">
+                <div class="state">
+                    <label>Male</label>
+                </div>
+            </div>
+            <div class="pretty p-default p-round">
+                <input type="radio" name="gender" id="female">
+                <div class="state">
+                    <label>Female</label>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <select class="selectpicker" id="university" name="university">
+            <option>City University of Hong Kong</option>
+            <option>Lingnan University</option>
+            <option>Hang Send University of Hong Kong</option>
+            <option>The Chinese University of Hong Kong</option>
+            <option>The Education University of Hong Kong</option>
+            <option>The Open University of Hong Kong</option>
+            <option>The Hong Kong Polytechnic University</option>
+            <option>The University of Hong Kong</option>
+            <option>The Hong Kong University of Science and Technology</option>
+        </select>
+
+        <input id="box1" type="checkbox" required/>
+        <label for="box1" class="intext">By creating an account, you agree to our <a href="#" style="color:cadetblue">Terms of Service</a>.</label>
+        <br>
+        <input id="box2" type="checkbox" required/>
+        <label for="box2" class="intext">I confirm I am above aged 18.</label>
+        <br>
+    <button type="submit" id = "submit1"><i class=" fa fa-check"></i> Submit</button>
+
+</form>
+</div>
+<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+<!-- <script type="text/javascript">
+    $(function(){ 
+        // $("#login1").click(function(){ 
+        //     location.href = 'login';
+        // });
+        $("#submit1").click(function(){ 
+            console.log("12311111111111111111");
+            var email = $("#email").val();
+            var password1 = $("#password1").val();
+            var password2 = $("#password2").val();
+            if(password1 !== password2){ 
+                $("#password1").css("border","1px solid red");
+                $("#password2").css("border","1px solid red");
+            }else if(password1 === password2){
+            var data = {"uname":username,"upwd":password};
+            $.ajax({ 
+                url: '/',
+                type: 'post',
+                data: data,
+                success: function(data,status){ 
+                    if(status == 'success'){ 
+                        location.href = 'mainpage';
+                    }
+                },
+                error: function(data,err){ 
+                        location.href = 'lsignup';
+                }
+            }); 
+        }
+        });
+    });
+</script> -->
+</body>
+</html>

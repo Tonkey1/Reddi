@@ -1,0 +1,168 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+/*for the checkbox*/
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+/*basic reset*/
+* {box-sizing: border-box;}
+
+.tab {
+    display: none;
+}
+
+
+/*headings*/
+.formtitle {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: darkgreen;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align:center;
+    font-family: montserrat;
+}
+
+.formtext {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+    font-family: montserrat;
+}
+
+/*container*/
+.signupform {
+    position: relative;
+    margin: 100px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 30px 35px 30px 35px;
+    box-sizing: border-box;
+    width: 40%;
+}
+
+
+/* Full-width input fields */
+input, textarea, select {
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+input:focus, textarea:focus, select:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    outline-width: 0;
+    transition: All 0.3s ease-in;
+    -webkit-transition: All 0.3s ease-in;
+    -moz-transition: All 0.3s ease-in;
+    -o-transition: All 0.3s ease-in;
+    border-color: green;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+    transform: scale(1.1);
+}
+
+input.invalid {
+    border-color: red;
+}
+/*button*/
+button {
+    width: 100px;
+    background: green;
+    font-weight: bold;
+    font-size:12px;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    opacity: 1;
+}
+
+button:hover, button:active, button:focus  {
+    opacity:0.9;
+}
+
+#previous-button {
+    width: 100px;
+    background: lightseagreen;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    opacity:1;
+}
+
+
+.radiobox{
+    text-align: left;
+    box-sizing: border-box;
+    margin: 15px;
+    color: #2C3E50;
+    font-size: 13px
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/*checkbox*/
+input[type=checkbox] {
+    display:none; }
+
+input[type=checkbox] + label:before {
+    font-family: FontAwesome;
+    display: inline-block;
+}
+
+input[type=checkbox] + label:before {
+    content: "\f096"; /*empty box*/
+}
+
+input[type=checkbox] + label:before {
+    letter-spacing: 8px;
+}
+
+input[type=checkbox]:checked + label:before {
+    content: "\f14a"; /*checked box*/
+    color:seagreen;
+}
+
+input[type=checkbox]:checked + label:before {
+    letter-spacing: 8px;
+}
+
+
+/* progressbar */
+.progressbar {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.progressbar.active {
+    opacity: 1;
+}
+
+.progressbar.finish {
+    background-color: #4CAF50;
+}
+
+
+
+

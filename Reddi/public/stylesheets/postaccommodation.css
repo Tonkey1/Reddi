@@ -1,0 +1,306 @@
+$maintone gren;
+
+* {
+    box-sizing: border-box;
+}
+/*background picture*/
+body {
+    background: linear-gardient(rgb(255,255,255,0.7));
+    background:url(../images/accommodationform_bg.jpg) no-repeat center center fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+/*design the box of the form*/
+#accommo_form {
+    background-color: rgb(255,255,255,0.92);
+    margin: 100px auto;
+    font-family: Calibri;
+    padding: 40px;
+    width: 50%;
+    min-width: 300px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/*design the input box, this time all 4 border*/
+input, select {
+    padding: 12px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border: 1px solid green;
+    border-radius: 3px;
+    margin-bottom: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: darkgreen;
+    font-size: 16px;
+}
+
+input:focus{
+    background-color:rgb(204,255,255, 0.12);
+}
+
+input.invalid {
+    border-color: red;
+}
+
+
+/*hide the tabs by default*/
+.tab {
+    display: none;
+}
+
+/* designing the button*/
+button {
+    width: 100px;
+    background: rgb(255,255,255,0.7);
+    font-weight: bold;
+    color: green;
+    border: 2px solid green;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    border: 0;
+    color: white;
+    background-color: green;
+}
+
+
+#previous-button {
+    background-color: lightgrey;
+    border-color:darkgrey;
+    color:white;
+}
+
+/* designing the progressbar */
+.progressbar {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.progressbar.active {
+    opacity: 1;
+}
+
+.progressbar.finish {
+    background-color: #4CAF50;
+}
+.title {
+    font-size: 25px;
+    color: lightseagreen;
+    margin-bottom: 10px;
+}
+
+.lefttext{
+    text-align:left;
+    font-size:20px;
+    font-family:calibri;
+    color:darkslategrey;
+}
+
+/*image drag and drop box design*/
+section {
+    flex-grow: 1;
+}
+
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 10px;
+    max-width: 100%;
+    padding: 15px;
+    border: 1px dashed green;
+    border-radius: 3px;
+    transition: 0.2s;
+&.is-active {
+     border-color: #4d90fe;
+ }
+}
+
+.fake-btn {
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.file-msg {
+    font-size: small;
+    font-weight: 300;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+&:focus {
+     border-color: #4d90fe;
+ }
+}
+
+/*design for the checkboxes*/
+.cb-field{
+    display:flex;
+}
+
+.cb-field input{
+    display: inline-block;
+    text-align:center;
+    width:25%;
+    float:left;
+}
+
+ul.cbtag {
+    list-style: none;
+    padding: 20px;
+}
+ul.cbtag li{
+    display: inline-block;
+}
+ul.cbtag li label{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    color: #adadad;
+    border: 2px solid rgba(139, 139, 139, .5);
+    border-radius: 6px;
+    margin: 3px 0px;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: all .2s;
+}
+
+ul.cbtag li label {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+ul.cbtag li label::before {
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    padding: 2px 6px 2px 2px;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+}
+
+ul.cbtag li input[type="checkbox"]:checked + label::before {
+    content: "\f00c";
+    transition: transform .3s ease-in-out;
+}
+
+ul.cbtag li input[type="checkbox"]:checked + label {
+    border: 2px solid #1bdbf8;
+    background-color: #12bbd4;
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.cbtag li input[type="checkbox"] {
+    display: absolute;
+}
+ul.cbtag li input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+ul.cbtag li input[type="checkbox"]:focus + label {
+    border: 2px solid lightseagreen;
+}
+
+/*design for the toggle radio button*/
+
+.switch-field {
+    display: inline-flex;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+
+.switch-field input {
+    position: absolute !important;
+    clip: rect(0, 0, -5, 0);
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+
+.switch-field label {
+    background-color: rbg(255,255,255,0.7);
+    color: rgb(0, 0, 0, 0.6);
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    margin-right: -1px;
+    border: 3px solid mediumseagreen;
+    transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+    cursor: pointer;
+}
+
+.switch-field input:checked + label {
+    background-color: mediumseagreen;
+    color:white;
+    box-shadow: none;
+}
+
+/*Map Styling*/
+#map {
+    height: 225px;
+}
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}

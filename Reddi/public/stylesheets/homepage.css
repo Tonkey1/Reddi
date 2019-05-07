@@ -1,0 +1,148 @@
+
+
+/* album position */
+#al_container{
+    top: 27%;
+    position: relative;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/* scroll cards */
+div.rowscroll {
+    overflow: auto;
+    flex-wrap: nowrap;
+}
+
+/* cards text format */
+div.newcardformat{
+    font-family: Futura;
+    color: firebrick;
+    word-wrap: normal;
+}
+
+
+div.filter{
+/* 1. present in the home page
+   2. filter: distance,  Guests no., Check-in: mm/yyyy, Check-out: mm/yyyy
+ */
+}
+
+/* like function */
+.fa {
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.fa:hover {
+    color: red;
+}
+
+/* timepicker */
+.time_block{
+    left: 100px;
+    top: 100px;
+    height: 70px;
+    width: 420px;
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.time_block_1{
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 50%;
+    height: 70px;
+    position: absolute;
+}
+
+.time_block_2{
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    left: 50%;
+    width: 205.5px;
+    height: 70px;
+    position: absolute;
+}
+
+.time_block_title{
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: transparent;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-style: initial;
+    border-right-style: initial;
+    border-bottom-style: initial;
+    border-left-style: initial;
+    border-top-color: initial;
+    border-right-color: initial;
+    border-bottom-color: initial;
+    border-left-color: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    cursor: pointer;
+    display: block;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.time_block_title_text{
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    word-wrap: break-word;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.3333333333333333em;
+    letter-spacing: 0.08333333333333333em;
+    color: rgb(72, 72, 72);
+}
+
+.tp{
+    background-color: pink;
+    border:0;
+    margin-left: 8px;
+}
+
+.tp_text{
+    word-wrap: break-word;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3333333333333333em;
+    letter-spacing: 0.08333333333333333em;
+    color: rgb(72, 72, 72);
+}
+
+.tp_block{
+    display: inline-block;
+    width:200px;
+    height:40px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: 1px;
+    border-radius: .25rem;
+    background-color: pink;
+}

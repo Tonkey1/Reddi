@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--bootstrap form-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--fa fa icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--radio box-->
+    <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+    <link type="text/css" rel="stylesheet" href="stylesheets/edit.css">
+</head>
+
+
+<body>
+
+<div class="container bootstrap snippet">
+    <p class="formtitle">Edit Profile - Tenant</p>
+    <div class="row">
+        <div class="col-sm-3"><!--left col-->
+<form class="form" action="" method="post" id="registrationForm" enctype="multipart/form-data">
+            <div class="text-center">
+                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                <p class="text">Upload a different photo...</p>
+                <input type="file" name="portrait" id="portrait" class="inputfile text-center center-block file-upload">
+            </div><hr><br>
+
+
+            <ul class="list-group">
+                <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+                <li class="list-group-item text-right"><span class="pull-left"><i class="fa fa-columns" aria-hidden="true"></i><strong>Posts</strong></span> 5</li>
+                <li class="list-group-item text-right"><span class="pull-left"><i class="fa fa-heart" aria-hidden="true"></i><strong>Likes</strong></span> 10</li>
+            </ul>
+
+
+        </div><!--/col-3-->
+        <div class="col-sm-9">
+            <div class="tab-content">
+
+                    <hr>
+                    
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="sname"><h4 class="text">Name</h4></label>
+                                <input type="text" class="form-control" name="sname" id="sname" placeholder="Name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <div class="radiobox">
+                                    <label><h4 class="text">Gender</h4></label> <br>
+                                    <div class="pretty p-default p-round">
+                                        <input type="radio" name="gender" id="male">
+                                        <div class="state">
+                                            <label>Male</label>
+                                        </div>
+                                    </div>
+                                    <div class="pretty p-default p-round">
+                                        <input type="radio" name="gender" id="female">
+                                        <div class="state">
+                                            <label>Female</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="contact"><h4 class="text">Phone</h4></label>
+                                <input type="number" name="contact" placeholder="Phone Number" class="form-control" id="contact">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="university"><h4 class="text">Your University</h4></label>
+                                <select class="select" id="university" name="university">
+                                    <option>City University of Hong Kong</option>
+                                    <option>Lingnan University</option>
+                                    <option>Hang Send University of Hong Kong</option>
+                                    <option>The Chinese University of Hong Kong</option>
+                                    <option>The Education University of Hong Kong</option>
+                                    <option>The Open University of Hong Kong</option>
+                                    <option>The Hong Kong Polytechnic University</option>
+                                    <option>The University of Hong Kong</option>
+                                    <option>The Hong Kong University of Science and Technology</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="password"><h4 class="text">Password</h4></label>
+                                <input name="psw" placeholder="Password" type="password" class="form-control"  id="password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="confirmpsw"><h4 class="text">Password Confirm</h4></label>
+                                <input name="confirmpsw" placeholder="Confirm Passward" type="password" class="form-control"id="confirmpsw">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <br>
+                                <button type="reset" style="background-color:limegreen" ><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                                <button type="submit"><i class="far fa-save"></i> Save</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <hr>
+
+    </div><!--/col-9-->
+</div><!--/row-->
+            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+            <!-- <script  src="seditprofile.js"></script> -->
+</body>
+</html>

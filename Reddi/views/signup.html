@@ -1,0 +1,277 @@
+<!--modal style sign up form-->
+<!DOCTYPE html>
+<html>
+<style>
+  * {box-sizing: border-box;}
+
+  .tab {
+    display: none;
+  }
+
+  /* Full-width input fields */
+  input {
+    padding: 12px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid green;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: darkgreen;
+    font-size: 16px;
+  }
+
+  input:focus{
+    background-color:rgb(204,255,255, 0.12);
+  }
+
+  input.invalid {
+    border-color: red;
+  }
+
+  button {
+    width: 100px;
+    background: white;
+    font-weight: bold;
+    color: green;
+    border: 2px solid green;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    transition-duration: 0.4s;
+  }
+
+  button:hover {
+    border: 0;
+    color: white;
+    background-color: green;
+  }
+
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #f44336;
+    cursor: pointer;
+  }
+
+
+  /* The Modal (background) */
+  .modal_signup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: (255, 255, 255, 0.5);
+    padding-top: 50px;
+  }
+
+  /* pop up box*/
+  .modal_signup-content {
+    background-color:white;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    width: 70%;
+    margin: 100px auto;
+    padding:40px;
+    text-align: center;
+    position: relative;
+  }
+
+  #previous-button {
+    background-color: lightgrey;
+    border-color:darkgrey;
+    color:white;
+  }
+
+
+  /* progressbar */
+  .progressbar {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+
+  .progressbar.active {
+    opacity: 1;
+  }
+
+  .progressbar.finish {
+    background-color: #4CAF50;
+  }
+
+  .title {
+    <b>
+    font-size: 15px;
+    color: lightseagreen;
+    margin-bottom: 10px;
+    </b>
+  }
+
+  .intext{
+    font-size: 9px;
+    text-align:left;
+  }
+
+
+
+</style>
+<body>
+
+<h2>Sign Up as...</h2>
+<!--you may link this two buttons to the website to get the function-->
+<button onclick="document.getElementById('id01').style.display='block'" style="width:120px;">Landlord</button>
+<button onclick="document.getElementById('id02').style.display='block'" style="width:120px;">Tenant</button>
+
+<div id="id01" class="modal_signup">
+  <form class="modal_signup-content" action="/action_page.php">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+
+
+    <h1>Sign Up As Landlord</h1>
+
+    <div class="tab">
+      <h2 class="title"> Login Information</h2>
+      <input type="text" name="email" placeholder="Enter Email" name="email" required >
+
+      <input type="password" placeholder="Password" name="pw" required>
+      <input type="password" placeholder="Confirm Password" name="pw-repeat" required>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">  Remember me
+
+      <p class="intext">By creating an account, you agree to our <a href="#" style="color:cadetblue">Terms of Service</a>.</p>
+    </div>
+
+
+    <div class="tab">
+      <h2 class="title"> Personal Information</h2>
+      <input type="text" placeholder="Enter Your First Name" name="first_name" required>
+      <input type="text" placeholder="Enter Your Last Name" name="last_name" required>
+      <input type="date" name="bday" required min="1900-01-01" max="today">
+      <input type="number" name="phone" placeholder="Enter Your Phone Number" required >
+    </div>
+
+
+    <div class="tab">
+      <h2 class="title"> Email Confirmation</h2>
+
+      <p>Welcome to Reddi!</p>
+      <p>You have successfully registered an account!</p>
+      <p>Please log in to your email for confirmation.<p>
+    </div>
+
+
+    <div style="overflow:auto;">
+      <div style="float:right;">
+        <button type="button" id="previous-button" onclick="nextPage(-1)">Previous</button>
+        <button type="button" id="next-button" onclick="nextPage(1)">Next</button>
+
+      </div>
+    </div>
+    <!-- indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="progressbar"></span>
+      <span class="progressbar"></span>
+      <span class="progressbar"></span>
+    </div>
+
+</div>
+</form>
+
+<script>
+  // Get the modal
+  var modal_signup = document.getElementById('id01');
+
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal_signup) {
+      modal_signup.style.display = "none";
+    }
+  }
+
+  //set the current tab as 0
+  var currentTab = 0;
+  showTab(currentTab);
+
+  function showTab(n) {
+    var x = document.getElementsByClassName("tab");
+    x[n].style.display = "block";
+    if (n == 0) {
+      document.getElementById("previous-button").style.display = "none";    //dont show the previous button on the first page or the last
+    }
+    else {
+      document.getElementById("previous-button").style.display = "inline";
+    }
+    if (n != (x.length - 1)) {
+      document.getElementById("next-button").innerHTML = "Next";       //may need to adjust this to send data to backend
+    }
+    if (n == 2) {
+      document.getElementById("previous-button").style.display = "none";
+      document.getElementById("next-button").style.display = "none";
+
+    }
+    progressbarcnt(n)
+  }
+
+  function nextPage(n) {
+    var x = document.getElementsByClassName("tab");
+    if (n == 1 && !validateForm()) return false;
+    x[currentTab].style.display = "none";
+    currentTab = currentTab + n;
+    if (currentTab >= x.length) {
+      document.getElementById("regForm").submit();
+      return false;
+    }
+    showTab(currentTab);
+  }
+  //to check whether the form is valid
+  function validateForm() {
+    var x, y, i, valid = true;
+    x = document.getElementsByClassName("tab");
+    y = x[currentTab].getElementsByTagName("input");
+    for (i = 0; i < y.length; i++) {
+      if (y[i].value == "") {
+        y[i].className += " invalid";
+        valid = false;
+      }
+    }
+
+    if (valid) {
+      document.getElementsByClassName("progressbar")[currentTab].className += " finish";
+    }
+    return valid;
+  }
+
+  function progressbarcnt(n) {
+    var i, x = document.getElementsByClassName("progressbar");
+    for (i = 0; i < x.length; i++) {
+      x[i].className = x[i].className.replace(" active", "");
+    }
+    x[n].className += " active";
+  }
+</script>
+
+</body>
+</html>
+

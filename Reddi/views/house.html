@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <link rel="stylesheet" href="stylesheets/normalize.css">
+  <link rel="stylesheet" href="stylesheets/buttons.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <title>Document</title>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:700'>
+
+  <link rel="stylesheet" href="stylesheets/socialshare.css">
+
+
+  <style>
+    * {
+      padding: 0;
+      margin: 5px;
+      font-family: "montserrat";
+      box-sizing: border-box;
+    }
+
+    .box {
+      background-color: #ccc;
+    }
+
+    button:focus {
+      outline: 0 !important;
+    }
+
+    .card {
+      width: 41.66666666666667%;
+      float: left;
+    }
+
+    .card div {
+      padding-left: 8px;
+      padding-right: 8px;
+      min-height: 1px;
+      position: relative;
+    }
+
+    .description {
+      width: 100%;
+      padding: 60px, 0;
+      background: #fff;
+    }
+
+    .description .descriptionblock {
+      display: inline;
+    }
+
+    .description span {
+      margin-top: 20px;
+      word-wrap: break-word;
+      font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.2857142857142858em;
+      color: rgb(72, 72, 72);
+    }
+
+    .mapouter {
+      position: relative;
+      text-align: right;
+      height: 500px;
+      width: auto;
+    }
+
+    .gmap_canvas {
+      overflow: hidden;
+      background: none !important;
+      height: 500px;
+      width: auto;
+    }
+
+    .details {
+      margin-top: 0px;
+      word-wrap: break-word;
+      font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.75em;
+      color: rgb(72, 72, 72);
+    }
+
+    .home {
+      width: 100%;
+      padding: inherit;
+      background: #fff;
+      justify-content: center;
+    }
+
+    .home .logo img {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .gallery-section {
+      width: 100%;
+      padding: 60px, 0;
+      background: #eee;
+      margin-left: 1rem;
+    }
+
+    .gallery-section img {
+      max-width: 460px;
+    }
+
+    .inner-width {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .gallery-section h1 {
+      text-align: center;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .border {
+      width: 130px;
+      height: 4px;
+      background: #333;
+      margin: 40px auto;
+    }
+
+    .name {
+      text-align: center;
+      font-family: 'Noto Sans', sans-serif;
+      font-size-adjust: .7
+    }
+
+    .gallery-section .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: stretch;
+    }
+
+    .gallery-section .image {
+      flex: 50%;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-section .image .img {
+      width: 100%;
+      height: 100%;
+      transition: 0.4s;
+    }
+
+    .gallery-section .image:hover img {
+      transform: scale(1.4);
+    }
+
+    @media screen and (max-width:960px) {
+      .gallery-section image {
+        flex: 33.33%;
+      }
+
+      .service-box {
+        max-width: 45%;
+      }
+    }
+
+    @media screen and (max-width:768px) {
+      .gallery-section image {
+        flex: 50%;
+      }
+
+      .service-box {
+        max-width: 50%;
+      }
+    }
+
+    @media screen and (max-width:480px) {
+      .gallery-section image {
+        flex: 100%;
+      }
+
+      .service-box {
+        max-width: 100%;
+      }
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 3fr 5fr;
+      grid-column-gap: 10px;
+      grid-auto-rows: minmax(auto, 100%);
+      min-height: 500px;
+    }
+
+    .wrapper2 {
+      display: grid;
+      grid-template-columns: 6fr 1fr 4fr;
+      grid-column-gap: 10px;
+      grid-auto-rows: minmax(auto, 100%);
+      min-height: 200px;
+      background-color: #fff;
+    }
+
+    .wrapper>div {
+      background-color: #eee;
+      padding: .5rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .wrapper>div:nth-child(even) {
+      background-image: url("images/img1.jpg");
+      background-size: 100% 100%;
+    }
+
+    .chatheadblock {
+      background-color: #fff;
+      margin-right: 0px;
+      padding: 0;
+    }
+
+    .chathead {
+      width: auto;
+      height: auto;
+      border-radius: 50%;
+      margin: 0;
+    }
+
+    .chatheadblock img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    .chatboxblock {
+      margin-left: 0px;
+    }
+
+    .amenities-section {
+      margin-top: 0px;
+      word-wrap: break-word;
+      font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 3em;
+      color: rgb(72, 72, 72);
+      box-sizing: border-box;
+    }
+
+    .service-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .service-box {
+      max-width: 33.33%;
+      padding: 20px;
+      text-align: center;
+      color: #455A64;
+      margin: 5px;
+    }
+
+    .service-icon {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      border: 3px solid #455A64;
+      color: #90A4AE;
+      transform: rotate(45deg);
+      transform: 0.3s linear;
+      margin-bottom: 30px;
+      margin-top: 16px;
+    }
+
+    .service-icon i {
+      line-height: 60px;
+      transform: rotate(-45deg);
+      font-size: 28px;
+    }
+
+    .service-box:hover .servie-icon {
+      color: #ddd;
+    }
+
+    .service-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .location {
+      margin-bottom: 100px;
+    }
+
+
+    .heart-section {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: 20%;
+      right: 10%;
+    }
+
+    .heart-section body {
+      padding: 0;
+
+    }
+
+    .heart-section a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 37px;
+      background: white;
+      border-radius: 37px;
+      line-height: 37px;
+      text-align: center;
+      font-size: 15px;
+      text-decoration: none;
+      color: #262626;
+      transition: 0.5s;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    .heart-section a.active {
+      background: transparent;
+      color: #ff6f60;
+    }
+
+    .heart-section a:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #ff6f60;
+      width: 50%;
+      height: 100%;
+      transition: 0.5s;
+      z-index: -1;
+      transform: translateX(100px) rotate(-325deg);
+      opacity: 0;
+    }
+
+    .heart-section a.active:before {
+      left: 15px;
+      transform: translateX(0) rotate(35deg);
+      border-bottom-left-radius: 37px;
+      border-top-left-radius: 37px;
+      opacity: 1;
+    }
+
+    .heart-section a:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #ff6f60;
+      width: 50%;
+      height: 100%;
+      transition: 0.5s;
+      z-index: -1;
+      transform: translateX(100px) rotate(325deg);
+      opacity: 0;
+    }
+
+    .heart-section a.active:after {
+      right: 15px;
+      transform: translateX(0px) rotate(-35deg);
+      border-bottom-right-radius: 37px;
+      border-top-right-radius: 37px;
+      opacity: 1;
+    }
+
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+
+    /* Full-width textarea */
+    .form-container textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+      resize: none;
+      min-height: 200px;
+    }
+
+    /* When the textarea gets focus, do something */
+    .form-container textarea:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Set a style for the submit/send button */
+    .form-container .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    }
+
+    .chatbox {
+      width: 450px;
+      min-width: 390px;
+      height: 350px;
+      background: #eee;
+      padding: 10px;
+      margin: 10px auto;
+      display: none;
+    }
+
+    .chatlogs {
+      display: flexbox;
+      margin-top: 0px;
+      width: 98%;
+      height: 265px;
+      background: #eee;
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+
+    .chatlogs::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .chatlogs::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: #bbb;
+    }
+
+    .chat {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .chat .user-photo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10%;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .chat .user-photo img {
+      width: 100%;
+    }
+
+    .chat .chat-message {
+      width: 80%;
+      padding: 8px;
+      margin: 5px 10px 0;
+      border-radius: 10px;
+      background: #fff;
+      color: black;
+      font-size: 14px;
+    }
+
+    .friend .chat-message {
+      background: #ddd;
+    }
+
+    .self .chat-message {
+      background: #f4eaaf;
+      order: -1;
+    }
+
+    .chat-form {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .chat-form textarea {
+      background: #fff;
+      width: 75%;
+      height: 30px;
+      border: 2px solid #eee;
+      border-radius: 5px;
+      resize: none;
+      padding: 5px;
+      font-size: 13px;
+      color: #333;
+    }
+
+    .chat-form textarea:focus {
+      background: #fff;
+      outline: 3px solid #c4eadf !important;
+    }
+
+    .chat-form textarea::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .chat-form textarea::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: #fff;
+    }
+
+    .chat-form button {
+      background: #c4eadf;
+      padding: 5px 15px;
+      font-size: 20px;
+      color: #fff;
+      border: none;
+      margin: 0 10px;
+      border-radius: 10px;
+      box-shadow: 0 3px 0 #d4eacf;
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      -webkit-transition: background .2s ease;
+      -moz-transition: background .2s ease;
+      -o-transition: background .2s ease;
+    }
+
+    .close-button {
+      margin: 0;
+      padding-left: 10px;
+      padding-bottom: 2px;
+      padding-top: 0;
+    }
+
+    .close-button div {
+      width: 30px;
+      height: 25px;
+      margin-bottom: 5px;
+      background: #b5c7d6;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 3px 0 #b5a7b6;
+      cursor: pointer;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      -webkit-transition: background .2s ease;
+      -moz-transition: background .2s ease;
+      -o-transition: background .2s ease;
+    }
+
+    .chat-form button:hover {
+      background: #e4eabf;
+    }
+
+    .close-button div:hover {
+      background: #b5d7e6
+    }
+
+    .times i {
+      position: absolute;
+      margin-left: 8px;
+      margin-top: 4px;
+      font-size: 20px;
+    }
+
+    .back-toolbar {
+      margin-right: 87%;
+      padding-left: 10px;
+      font-size: 20px;
+      color: black;
+    }
+
+    .heart-section{
+      font-family: montserrat;
+      font-weight: 600;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!--top toolbar link to the homepage.html-->
+  <div class="home">
+    <a href="#" class="back-toolbar">
+      <i class="fas fa-chevron-left"></i>
+    </a>
+    <a href="#">
+      <img src="images/logo.png" class="logo" style="width: 3rem">
+    </a>
+  </div>
+
+
+  <!--name and cover photo-->
+  <div class="wrapper" style="margin-bottom: 2rem">
+    <div class="name">
+      <p class="name" style="margin-top: 120px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, numquam!</p>
+    </div>
+    <!--add to wishing list-->
+    <div>
+      <div class="heart-section">
+        <a href="#">save</a>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script>
+          $(document).ready(function() {
+            $('a').click(function() {
+              $('a').toggleClass('active')
+            })
+          })
+        </script>
+      </div>
+      <!--share-->
+      <div class="social-share-section">
+        <div class="share">
+          <span>Share</span>
+          <nav>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-envelope"></i></a>
+            <a href="#"><i class="fa fa-weixin"></i></a>
+          </nav>
+        </div>
+        <script src="javascripts/index.js"></script>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!--1. description and Accommodation Information (1)
+  <Accommodation type
+  <You can accommodate ... guests
+  <Size of your accommodation (sq. ft.)
+  <Beds for guests
+  <Bathrooms for guests-->
+  <!--landlord profile
+  <landlord's profile photo
+  <landlord's name-->
+  <!--chatbox with landlord-->
+
+  <div class="wrapper2" style="margin-bottom: 50px; margin-top: 50px;">
+    <div class="description">
+      <div class="inner-width">
+        <div style="margin-bottom: 15px">
+          <div class="descriptionblock" style="margin-bottom: 2px;">
+            <span>2 guests</span>
+            <span>Studio</span>
+            <span>1 bad</span>
+            <span>1 bath</span>
+          </div>
+        </div>
+        <div style="box-sizing: border-box; margin-left: .5rem">
+          <div class="details">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, cumque blanditiis ipsam rerum quam nam distinctio ad dignissimos laudantium nemo eos ducimus, expedita suscipit, modi recusandae pariatur. Nemo, aliquam, vitae?
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="chatheadblock">
+      <div class="chathead">
+        <!--landlord's profile photo-->
+        <a href="#"><img src="images/profile-photo.jpg" alt="chathead"></a>
+      </div>
+      <!--landlord's name-->
+    </div>
+    <div class="chatboxblock">
+      <div class="chatbox-section">
+        <div class="description" style="text-align:left; width:auto; margin: 0">
+          <span>Host by Alexander</span>
+        </div>
+
+        <!--chat bottom-->
+        <div style="margin-top: 60px;">
+        </div>
+        <div class="mybutton">
+          <!--a popup chat box-->
+
+          <div class="mybutton" id="open-chatbox-btn">
+            <button class="button button--aylen button--round-l button--text-thick" style="border: 1px solid black; margin-left: 0px;
+            text-decoration: none;" onclick="openForm()">
+              chat with him
+            </button>
+          </div>
+
+          <!--this is the pop up chat box-->
+          <div class="chatbox" id="chatbox">
+
+            <!--this div element defines close popup chatbox action -->
+            <div class="close-button" role="button" onclick="closeForm()">
+              <div class="times cancel">
+                <i class="fas fa-times"></i>
+              </div>
+            </div>
+
+            <!--this div element defines several chat messages -->
+            <div class="chatlogs">
+              <div class="chat friend">
+                <div class="user-photo"><img src="images/profile-photo.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+              </div>
+
+              <div class="chat self">
+                <div class="user-photo"><img src="images/student-profile-photo.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+              </div>
+
+              <div class="chat friend">
+                <div class="user-photo"><img src="images/profile-photo.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+              </div>
+
+              <div class="chat self">
+                <div class="user-photo"><img src="images/student-profile-photo.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+              </div>
+
+              <div class="chat friend">
+                <div class="user-photo"><img src="images/profile-photo.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+              </div>
+
+              <div class="chat self">
+                <div class="user-photo"><img src="images/student-profile-photo.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+              </div>
+
+              <div class="chat friend">
+                <div class="user-photo"><img src="images/profile-photo.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+              </div>
+
+              <div class="chat self">
+                <div class="user-photo"><img src="images/student-profile-photo.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+              </div>
+
+              <div class="chat friend">
+                <div class="user-photo"><img src="images/profile-photo.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+              </div>
+
+              <div class="chat self">
+                <div class="user-photo"><img src="images/student-profile-photo.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+              </div>
+
+            </div>
+            <div class="chat-form">
+              <textarea name="name"></textarea>
+              <button>Send</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var e = document.getElementById("chatbox");
+    var ocb = document.getElementById("open-chatbox-btn");
+
+    function openForm() {
+      e.style.display = "block";
+      ocb.style.display = "none";
+    }
+
+    function closeForm() {
+      e.style.display = "none";
+      ocb.style.display = "block";
+    }
+  </script>
+
+
+  <!--III. Accommodation Facilities-->
+  <div class="amenities-section" style="margin-bottom: 50px">
+    <div class="gallery-section" style="background-color: #fff">
+      <div class="inner-width">
+        <h1>
+          Amenities
+        </h1>
+        <div class="border"></div>
+
+        <div class="service-container">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <div class="service-title">Kitchen</div>
+          </div>
+
+          <div class="service-box">
+
+            <div class="service-icon">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <div class="service-title">Gym</div>
+          </div>
+
+          <div class="service-box">
+
+
+            <div class="service-icon">
+              <i class="fas fa-caret-square-left" style="transform:rotate(45deg)"></i>
+            </div>
+            <div class="service-title">Elevator</div>
+
+          </div>
+
+          <div class="service-box">
+
+            <div class="service-icon">
+              <i class="fas fa-wifi"></i>
+            </div>
+            <div class="service-title">Wifi</div>
+
+          </div>
+
+          <div class="service-box">
+
+
+
+            <div class="service-icon">
+              <i class="fas fa-tv"></i>
+            </div>
+            <div class="service-title">TV</div>
+
+          </div>
+
+          <div class="service-box">
+
+
+
+            <div class="service-icon">
+              <i class="fas fa-temperature-high"></i>
+            </div>
+            <div class="service-title">Heating</div>
+
+          </div>
+
+          <div class="service-box">
+
+            <div class="service-icon">
+              <i class="fas fa-stroopwafel"></i>
+            </div>
+            <div class="service-title">Air conditioner</div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+
+
+  <!--location-->
+  <div class="location">
+    <div class="gallery-section" ; style="background-color:#fff">
+      <div class="inner-width">
+        <h1>
+          location
+        </h1>
+        <div class="border"></div>
+        <div class="inner-width">
+          <div class="mapouter">
+            <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0"
+                marginwidth="0"></iframe>Werbung: <a href="https://www.jetzt-drucken-lassen.de">jetzt-drucken-lassen.de</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Additional photos (jpg, png, gif) (max. 15 photos)-->
+    <div class="gallery-section" style="left:0; top:0; right:0; bottom: 0; ">
+      <div class="inner-width">
+        <h1>Photos</h1>
+        <div class="border">
+        </div>
+        <div class="gallery" style="display: inline-block; margin-left: 95px;">
+
+          <a href="images/img1.png" class="image">
+            <img src="images/img1.png" alt="images/img1">
+          </a>
+
+          <a href="images/img2.png" class="image">
+            <img src="images/img2.png" alt="images/img1">
+          </a>
+
+          <a href="images/img3.png" class="image">
+            <img src="images/img3.png" alt="images/img1">
+          </a>
+
+          <a href="images/img4.png" class="image">
+            <img src="images/img4.png" alt="images/img1">
+          </a>
+
+          <a href="images/img5.png" class="image">
+            <img src="images/img5.png" alt="images/img1">
+          </a>
+
+          <a href="images/img6.png" class="image">
+            <img src="images/img6.png" alt="images/img1">
+          </a>
+
+          <a href="images/img7.png" class="image">
+            <img src="images/img7.png" alt="images/img1">
+          </a>
+
+          <a href="images/img1.png" class="image">
+            <img src="images/img1.png" alt="images/img1">
+          </a>
+
+          <a href="images/img8.png" class="image">
+            <img src="images/img8.png" alt="images/img1">
+          </a>
+
+          <a href="images/img9.png" class="image">
+            <img src="images/img9.png" alt="images/img1">
+          </a>
+
+          <a href="images/img10.png" class="image">
+            <img src="images/img10.png" alt="images/img1">
+          </a>
+
+          <a href="images/img11.png" class="image">
+            <img src="images/img11.png" alt="images/img1">
+          </a>
+
+          <a href="images/img12.png" class="image">
+            <img src="images/img12.png" alt="images/img1">
+          </a>
+
+          <a href="images/img13.png" class="image">
+            <img src="images/img13.png" alt="images/img1">
+          </a>
+
+          <a href="images/img14.png" class="image">
+            <img src="images/img14.png" alt="images/img1">
+          </a>
+
+          <a href="images/img15.png" class="image">
+            <img src="images/img15.png" alt="images/img1">
+          </a>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!--images/student's comments-->
+
+
+
+
+    <script>
+      $(".gallery").magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery: {
+          enabled: true
+        }
+      });
+    </script>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

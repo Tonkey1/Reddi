@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FindRoommates</title>
+
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dokdo|Merriweathe'>
+
+  <link rel="stylesheet" href="stylesheets/style.css">
+
+
+</head>
+
+<body>
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Add to cart interaction</title>
+
+
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <style>
+      #header svg {
+        font-size: 40px;
+        color: black;
+        width: 30px;
+        height: 30px;
+        position: fixed;
+        left: 25px;
+        top: 30px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <div id="wrapper">
+
+      <div id="header">
+        <svg href="#" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-left" class="svg-inline--fa fa-angle-left fa-w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+          <path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path>
+        </svg>
+        <form class="search-form">
+
+          <input type="search" value="" placeholder="find roommates" class="search-input">
+          <button type="submit" class="search-button">
+            <svg class="submit-button">
+              <use xmlns:xlink="#" xlink:href="#search"></use>
+            </svg>
+          </button>
+          <div class="search-option">
+            <div>
+              <input name="type" type="radio" value="type-users" id="type-users">
+              <label for="type-users">
+                <svg class="edit-pen-title">
+                  <use xmlns:xlink="#" xlink:href="#user"></use>
+                </svg>
+                <span>Name</span>
+              </label>
+            </div>
+
+            <div>
+              <input name="type" type="radio" value="type-posts" id="type-posts">
+              <label for="type-posts">
+                <svg class="edit-pen-title">
+                  <use xmlns:xlink="#" xlink:href="#post"></use>
+                </svg>
+                <span>University</span>
+              </label>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+      <div id="sidebar">
+        <h3>My groupmates</h3>
+        <div id="cart">
+          <span class="empty">Invite someone.</span>
+        </div>
+
+        <h3>University</h3>
+        <div class="checklist categories">
+          <ul>
+            <li><a href=""><span></span>The Chinese University of Hong Kong</a></li>
+            <li><a href=""><span></span>City University of Hong Kong</a></li>
+            <li><a href=""><span></span>The Education University of Hong Kong</a></li>
+            <li><a href=""><span></span>Hong Kong Baptist University</a></li>
+            <li><a href=""><span></span>The Hong Kong Polytechnic University</a></li>
+            <li><a href=""><span></span>The Hong Kong University of Science and Technology</a></li>
+            <li><a href=""><span></span>Lingnan University</a></li>
+            <li><a href=""><span></span>The University of Hong Kong</a></li>
+          </ul>
+        </div>
+
+        <h3>Gender</h3>
+        <div class="checklist categories">
+          <ul>
+            <li><a href=""><span></span>Male</a></li>
+            <li><a href=""><span></span>Female</a></li>
+          </ul>
+        </div>
+
+        <h3>
+          Add a post
+        </h3>
+        <div class="photo_submit-container">
+          <div class="photo_submit-container">
+            <label class="photo_submit js-photo_submit1" style="border-radius: 8px 8px 0 0; height:95px;">
+              <input class="photo_submit-input js-photo_submit-input" type="file" accept="image/*">
+              <span class="photo_submit-plus"></span>
+              <span class="photo_submit-uploadLabel">Upload Cover</span>
+              <span class="photo_submit-delete"></span>
+
+            </label>
+          </div>
+        </div>
+        <div class="photo_submit-container">
+          <div class="photo_submit group_name" style="border-radius:0 0 8px 8px">
+            <input type="text" placeholder="describe yourself" />
+            <span class="photo_submit-uploadLabel">Description</span>
+          </div>
+        </div>
+        <h3>Chatbox</h3>
+        <div class='form-overlay'></div>
+        <div class='icon fa fa-pencil' id='form-container'>
+          <span class='icon' id='form-close'></span>
+          <div id='form-content'>
+            <div id='form-head'>
+              <i class="close-interface fas fa-times" id="close-interface"></i>
+              <h1 class='pre'>Group Name</h1>
+              <div class="group-images">
+                <img src="myimage.jpg" alt="" id="image">
+                <img src="myimage.jpg" alt="" id="image">
+                <img src="myimage.jpg" alt="" id="image">
+                <img src="myimage.jpg" alt="" id="image">
+                <img src="myimage.jpg" alt="" id="image">
+              </div>
+            </div>
+            <form>
+              <input class='input name' id='name' name='user_name' placeholder='Your name please' type='text'>
+              <textarea class='input message' id='yourmessage' placeholder='Leave a message'></textarea>
+              <input class='input submit' type='submit' value='Send Message'>
+            </form>
+            <hr>
+            <ul class='media-list comment-list' id='results'></ul>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="grid-selector">
+        Showing 1–9 of 48 results
+      </div>
+
+      <div id="grid">
+
+        <div class="product">
+          <div class="make3D">
+            <div class="product-front">
+              <div class="shadow"></div>
+              <img src="cover-image.jpg" alt="" />
+              <div class="image_overlay"></div>
+              <div class="add_to_cart">Invite</div>
+              <div class="stats">
+                <div class="stats-container">
+
+                  <span class="product_name">Alice</span>
+                  <div class="private-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ad quas ducimus sed ipsam placeat non sint ea iure alias.</div>
+                  <p style="margin-top:10px;">The Chinese University of Hong Kong</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="make3D">
+            <div class="product-front">
+              <div class="shadow"></div>
+              <img src="cover-image.jpg" alt="" />
+              <div class="image_overlay"></div>
+              <div class="add_to_cart">Invite</div>
+              <div class="stats">
+                <div class="stats-container">
+
+                  <span class="product_name">Alice</span>
+                  <div class="private-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ad quas ducimus sed ipsam placeat non sint ea iure alias.</div>
+                  <p style="margin-top:10px;">The Chinese University of Hong Kong</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="make3D">
+            <div class="product-front">
+              <div class="shadow"></div>
+              <img src="cover-image.jpg" alt="" />
+              <div class="image_overlay"></div>
+              <div class="add_to_cart">Invite</div>
+              <div class="stats">
+                <div class="stats-container">
+
+                  <span class="product_name">Alice</span>
+                  <div class="private-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ad quas ducimus sed ipsam placeat non sint ea iure alias.</div>
+                  <p style="margin-top:10px;">The Chinese University of Hong Kong</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="make3D">
+            <div class="product-front">
+              <div class="shadow"></div>
+              <img src="cover-image.jpg" alt="" />
+              <div class="image_overlay"></div>
+              <div class="add_to_cart">Invite</div>
+              <div class="stats">
+                <div class="stats-container">
+
+                  <span class="product_name">Alice</span>
+                  <div class="private-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ad quas ducimus sed ipsam placeat non sint ea iure alias.</div>
+                  <p style="margin-top:10px;">The Chinese University of Hong Kong</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="make3D">
+            <div class="product-front">
+              <div class="shadow"></div>
+              <img src="cover-image.jpg" alt="" />
+              <div class="image_overlay"></div>
+              <div class="add_to_cart">Invite</div>
+              <div class="stats">
+                <div class="stats-container">
+
+                  <span class="product_name">Alice</span>
+                  <div class="private-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ad quas ducimus sed ipsam placeat non sint ea iure alias.</div>
+                  <p style="margin-top:10px;">The Chinese University of Hong Kong</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="make3D">
+            <div class="product-front">
+              <div class="shadow"></div>
+              <img src="cover-image.jpg" alt="" />
+              <div class="image_overlay"></div>
+              <div class="add_to_cart">Invite</div>
+              <div class="stats">
+                <div class="stats-container">
+
+                  <span class="product_name">Alice</span>
+                  <div class="private-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ad quas ducimus sed ipsam placeat non sint ea iure alias.</div>
+                  <p style="margin-top:10px;">The Chinese University of Hong Kong</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="make3D">
+            <div class="product-front">
+              <div class="shadow"></div>
+              <img src="cover-image.jpg" alt="" />
+              <div class="image_overlay"></div>
+              <div class="add_to_cart">Invite</div>
+              <div class="stats">
+                <div class="stats-container">
+
+                  <span class="product_name">Alice</span>
+                  <div class="private-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ad quas ducimus sed ipsam placeat non sint ea iure alias.</div>
+                  <p style="margin-top:10px;">The Chinese University of Hong Kong</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="make3D">
+            <div class="product-front">
+              <div class="shadow"></div>
+              <img src="cover-image.jpg" alt="" />
+              <div class="image_overlay"></div>
+              <div class="add_to_cart">Invite</div>
+              <div class="stats">
+                <div class="stats-container">
+
+                  <span class="product_name">Alice</span>
+                  <div class="private-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ad quas ducimus sed ipsam placeat non sint ea iure alias.</div>
+                  <p style="margin-top:10px;">The Chinese University of Hong Kong</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="make3D">
+            <div class="product-front">
+              <div class="shadow"></div>
+              <img src="cover-image.jpg" alt="" />
+              <div class="image_overlay"></div>
+              <div class="add_to_cart">Invite</div>
+              <div class="stats">
+                <div class="stats-container">
+
+                  <span class="product_name">Alice</span>
+                  <div class="private-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ad quas ducimus sed ipsam placeat non sint ea iure alias.</div>
+                  <p style="margin-top:10px;">The Chinese University of Hong Kong</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="javascripts/menu.js"></script>
+
+
+
+    <script src="javascripts/roommates.js"></script>
+
+
+
+
+  </body>
+
+  </html>
+
+
+
+  <script src="javascripts/roommates.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mainpage</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
+
+  <link rel="stylesheet" href="stylesheets/welcomebox.css">
+  <link rel="stylesheet" href="stylesheets/notification.css">
+  <style>
+    .sort {
+      top: 105%;
+      height: 80px;
+    }
+
+    .cont-select_center {
+      margin-top: 0;
+    }
+
+    .myslider {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--top toolbar link-->
+  <div>
+    <section class="section-notification">
+      <div class="logo">
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="660.000000pt" height="260.000000pt" viewBox="0 0 660.000000 260.000000" preserveAspectRatio="xMidYMid meet">
+          <metadata>
+            Created by potrace 1.15, written by Peter Selinger 2001-2017
+          </metadata>
+          <g transform="translate(0.000000,260.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+            <path d="M3290 1967 c-17 -13 -224 -237 -278 -300 -38 -45 -40 -76 -8 -114
+        l24 -28 289 -3 c158 -1 296 -2 306 -2 15 0 17 -15 17 -170 l0 -170 -220 0
+        -221 0 3 103 3 102 80 0 80 0 3 -82 c3 -74 5 -83 22 -83 25 0 34 33 28 112 -4
+        51 -9 65 -32 85 -24 20 -38 23 -107 23 -72 0 -82 -3 -104 -25 -23 -23 -25 -31
+        -25 -130 l0 -105 -138 0 c-94 0 -142 4 -150 12 -8 8 -12 62 -12 178 l0 165 80
+        90 80 90 0 73 0 72 30 0 c25 0 30 -4 30 -25 0 -24 24 -44 37 -32 9 9 14 69 7
+        89 -4 15 -17 18 -74 18 -45 0 -69 -4 -73 -12 -2 -7 -5 -49 -6 -92 l-2 -79 -74
+        -83 c-88 -99 -89 -105 -81 -320 5 -144 6 -150 31 -171 25 -22 35 -23 171 -23
+        115 0 144 -3 144 -14 0 -7 9 -25 21 -40 l20 -26 229 0 229 0 20 26 c12 15 21
+        33 21 40 0 8 11 14 25 14 14 0 37 11 50 25 25 24 25 26 25 215 l0 192 -78 76
+        c-327 322 -348 342 -378 342 -16 0 -36 -6 -44 -13z m253 -228 l197 -191 -2
+        -182 c-3 -179 -3 -181 -25 -184 l-23 -3 0 171 c0 168 0 171 -25 195 l-24 25
+        -290 0 c-159 0 -296 3 -305 6 -9 3 -16 15 -16 25 0 23 279 328 300 329 8 0
+        104 -86 213 -191z m97 -623 c0 -23 -24 -26 -220 -26 -196 0 -220 3 -220 26 0
+        12 39 14 220 14 181 0 220 -2 220 -14z">
+          </g>
+        </svg>
+      </div>
+      <ul class="nav">
+        <li><a href="#mypanel2" style="color:white"><i class="material-icons">home</i></a></li>
+        <li  role="button" onclick="openForm()">
+          <i class="material-icons">chat_bubble_outline</i>
+        </li>
+        <li class="is-active">
+          <i class="material-icons">search
+            <ul class="notifications" id="open-chatbox-btn">
+              <li><span>9</span></li>
+            </ul>
+          </i>
+        </li>
+        <li><a href="lselfprofile" style="color:white"><i class="material-icons">face</i></a></li>
+      </ul>
+
+      <div class="chatbox" id="chatbox">
+        <!--this div element defines close popup chatbox action -->
+        <div class="close-button" id="chatboxheader">
+          <div class="times cancel" role="button" onclick="closeForm()">
+            <i class="fas fa-times" style="color:black"></i>
+          </div>
+        </div>
+
+        <!--this div element defines several chat messages -->
+        <div class="chatlogs">
+          <div class="chat friend">
+            <div class="user-photo"><img src="images/profile-photo.jpg"></div>
+            <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div class="chat self">
+            <div class="user-photo"><img src="images/student-profile-photo.jpg"></div>
+            <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+          </div>
+
+          <div class="chat friend">
+            <div class="user-photo"><img src="images/profile-photo.jpg"></div>
+            <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div class="chat self">
+            <div class="user-photo"><img src="images/student-profile-photo.jpg"></div>
+            <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+          </div>
+
+          <div class="chat friend">
+            <div class="user-photo"><img src="images/profile-photo.jpg"></div>
+            <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div class="chat self">
+            <div class="user-photo"><img src="images/student-profile-photo.jpg"></div>
+            <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+          </div>
+
+          <div class="chat friend">
+            <div class="user-photo"><img src="images/profile-photo.jpg"></div>
+            <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div class="chat self">
+            <div class="user-photo"><img src="images/student-profile-photo.jpg"></div>
+            <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+          </div>
+
+          <div class="chat friend">
+            <div class="user-photo"><img src="images/profile-photo.jpg"></div>
+            <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div class="chat self">
+            <div class="user-photo"><img src="images/student-profile-photo.jpg"></div>
+            <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+          </div>
+
+        </div>
+        <div class="chat-form">
+          <textarea name="name"></textarea>
+          <button>Send</button>
+        </div>
+      </div>
+      <script>
+        var e = document.getElementById("chatbox");
+        var ocb = document.getElementById("open-chatbox-btn");
+
+        function openForm() {
+          e.style.display = "block";
+          ocb.style.display = "none";
+        }
+
+        function closeForm() {
+          ocb.style.display = "block";
+        }
+      </script>
+      <!-- welcome box -->
+     <div class="mainbox" method = "post" >
+<section class="user" method = "post">
+  <div class="welcomebox-container">
+    <div class="welcomebox-text">
+      <div class="welcomebox-welcome">
+        <h class="welcomebox-title">Welcome to Reddi!</h>
+        <p class="welcomebox-intext">You can easily find accommodations and roommates here!</p>
+        <br>
+        <form class="logoutbutton" method = "post">
+              <input type="submit" method = "post" id="logout" value="Log Out" class="forms_buttons-action"></button>
+          </form>
+      </div>
+    </div>
+          <!--  end of black container  -->
+        </section>
+      </div>
+
+    </section>
+  </div>
+
+  <div style="width:100%; height:100%" id="mypanel2">
+    <form id="sortform">
+      <div class="sort">
+        <div class="cont_select_center">
+          <div class="select_mate" data-mate-select="active">
+            <select name="choose university" onchange="" onclick="return false;" id="">
+              <option value="" disabled="disabled" selected="selected" style="color:#eee">Select University</option>
+              <option value="1">The Chinese University of Hong Kong</option>
+              <option value="2">City University of Hong Kong</option>
+              <option value="3">The Education University of Hong Kong</option>
+              <option value="4">Hong Kong Baptist University</option>
+              <option value="5">The Hong Kong Polytechnic University</option>
+              <option value="6">The Hong Kong University of Science and Technology</option>
+              <option value="7">Lingnan University</option>
+              <option value="8">The University of Hong Kong</option>
+
+            </select>
+            <p class="selecionado_opcion" onclick="open_select(this)">Select University</p><span onclick="open_select(this)" class="icon_select_mate"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                <path d="M0-.75h24v24H0z" fill="none" />
+              </svg></span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int"> </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="cont_select_center">
+          <div class="select_mate" data-mate-select="active" style="min-width:120px; width:120px;">
+            <select name="choose house type" onchange="" onclick="return false;">
+              <option value="" disabled="disabled" selected="selected" style="color:#eee">Type</option>
+              <option value="1">Entire Flat</option>
+              <option value="2">Single Room</option>
+              <option value="3">Shared Room</option>
+            </select>
+            <p class="selecionado_opcion" onclick="open_select(this)">Type</p><span onclick="open_select(this)" class="icon_select_mate"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                <path d="M0-.75h24v24H0z" fill="none" />
+              </svg></span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int"> </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="cont_select_center">
+          <div class="select_mate select_input">
+            <label for="datepicker">Start Date
+              <input type="date" id="datepicker" autocomplete="off">
+            </label>
+          </div>
+        </div>
+
+        <div class="cont_select_center">
+          <div class="select_mate" data-mate-select="active" onchange="" onclick="return false;" id="">
+            <select id="duration" name="duration">
+              <option value="" disabled="disabled" selected="selected" style="color:#eee">Select Duration</option>
+              <option value="3month">3 Months</option>
+              <option value="6month">6 Months</option>
+              <option value="1yr">1 Year</option>
+              <option value="2yr">2 Years</option>
+              <option value="more2yr">More than 2 Years</option>
+            </select>
+            <p class="selecionado_opcion" onclick="open_select(this)">Select Duration</p><span onclick="open_select(this)" class="icon_select_mate"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                <path d="M0-.75h24v24H0z" fill="none" />
+              </svg></span>
+            <div class="cont_list_select_mate">
+              <ul class="cont_select_int"> </ul>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="sort">
+          <div class="cont_select_center">
+            <div class="select_mate" id="select_box_times" onclick="boxes_click_display()" style="min-width:180px; width:180px;">
+              <p class="selecionado_opcion">Amentities</p>
+              <div class="cont_list_select_box">
+                <div id="specials" class="clearfix">
+                  <div class="specBump">
+                    <div class="box2">
+                      <input type="checkbox" id="Wifi">
+                      <label for="Wifi" class="check-box"></label>
+                      <h4>Wifi</h4>
+                    </div>
+
+                    <div class="box2">
+                      <input type="checkbox" id="tv">
+                      <label for="tv" class="check-box"></label>
+                      <h4>TV</h4>
+                    </div>
+
+                    <div class="box2">
+                      <input type="checkbox" id="AC">
+                      <label for="AC" class="check-box"></label>
+                      <h4>AirCon</h4>
+                    </div>
+
+                    <div class="box2">
+                      <input type="checkbox" id="Heating">
+                      <label for="Heating" class="check-box"></label>
+                      <h4>Heating</h4>
+                    </div>
+
+
+
+                    <div class="box2">
+                      <input type="checkbox" id="Gym">
+                      <label for="Gym" class="check-box"></label>
+                      <h4>Gym</h4>
+                    </div>
+
+                    <div class="box2">
+                      <input type="checkbox" id="Elevator">
+                      <label for="Elevator" class="check-box"></label>
+                      <h4>Lift</h4>
+                    </div>
+
+                    <div class="box2">
+                      <input type="checkbox" id="Electricity">
+                      <label for="Electricity" class="check-box"></label>
+                      <h4>Electricity</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cont_select_center">
+            <div class="select_mate" id="utibox_times" onclick="boxes_click_display2()" style="min-width:220px; width:220px;">
+              <p class="selecionado_opcion">Utilities (Paid by Landlord)</p>
+              <div class="cont_list_select_box2" style="background-color:#eee; opacity:1; z-index:2;">
+                <div id="specials" class="clearfix">
+                  <div class="specBump">
+                    <div class="box3">
+                      <input type="checkbox" id="lmgnt">
+                      <label for="lmgnt" class="check-box"></label>
+                      <h4>MgntFee</h4>
+                    </div>
+
+                    <div class="box3" style="margin-left:50px;">
+                      <input type="checkbox" id="lelectricity">
+                      <label for="lelectricity" class="check-box"></label>
+                      <h4>Electricity</h4>
+                    </div>
+
+                    <div class="box3" style="margin-left:50px;">
+                      <input type="checkbox" id="lwater">
+                      <label for="lwater" class="check-box"></label>
+                      <h4>Water</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sort" style="top:185%">
+          <div class="myslider">
+            <p>Price</p>
+            <div slider id="slider-distance">
+              <div>
+                <div inverse-left style="width:70%;"></div>
+                <div inverse-right style="width:70%;"></div>
+                <div range style="left:30%;right:40%;"></div>
+                <span thumb style="left:30%;"></span>
+                <span thumb style="left:60%;"></span>
+                <div sign style="left:30%;">
+                  <span id="value">3000</span>
+                </div>
+                <div sign style="left:60%;">
+                  <span id="value">6000</span>
+                </div>
+              </div>
+              <input type="range" tabindex="10" value="3000" max="10000" min="0" step="1" oninput="
+  this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
+  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+  var children = this.parentNode.childNodes[1].childNodes;
+  children[1].style.width=value+'%';
+  children[5].style.left=value+'%';
+  children[7].style.left=value+'%';children[11].style.left=value+'%';
+  children[11].childNodes[1].innerHTML=this.value;" />
+
+              <input type="range" tabindex="1" value="6000" max="10000" min="0" step="1" oninput="
+  this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
+  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+  var children = this.parentNode.childNodes[1].childNodes;
+  children[3].style.width=(100-value)+'%';
+  children[5].style.right=(100-value)+'%';
+  children[9].style.left=value+'%';children[13].style.left=value+'%';
+  children[13].childNodes[1].innerHTML=this.value;" />
+            </div>
+          </div>
+
+          <div class="myslider">
+            <p>People</p>
+            <div slider id="slider-distance">
+              <div>
+                <div inverse-left style="width:70%;"></div>
+                <div inverse-right style="width:70%;"></div>
+                <div range style="left:30%;right:40%;"></div>
+                <span thumb style="left:30%;"></span>
+                <span thumb style="left:60%;"></span>
+                <div sign style="left:30%;">
+                  <span id="value">4</span>
+                </div>
+                <div sign style="left:60%;">
+                  <span id="value">6</span>
+                </div>
+              </div>
+              <input type="range" tabindex="10" value="3" max="10" min="0" step="1" oninput="
+  this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
+  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+  var children = this.parentNode.childNodes[1].childNodes;
+  children[1].style.width=value+'%';
+  children[5].style.left=value+'%';
+  children[7].style.left=value+'%';children[11].style.left=value+'%';
+  children[11].childNodes[1].innerHTML=this.value;" />
+
+              <input type="range" tabindex="1" value="6" max="10" min="0" step="1" oninput="
+  this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
+  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+  var children = this.parentNode.childNodes[1].childNodes;
+  children[3].style.width=(100-value)+'%';
+  children[5].style.right=(100-value)+'%';
+  children[9].style.left=value+'%';children[13].style.left=value+'%';
+  children[13].childNodes[1].innerHTML=this.value;" />
+            </div>
+          </div>
+          <button class=sortbutton type=submit>Select</button>
+        </div>
+      </div>
+
+
+
+
+
+    </form>
+
+    <section style="margin:0; padding-top:0">
+      <div class="container" style="background-color:#fff">
+
+        <div class="swiper-container">
+          <div class="column swiper-wrapper">
+
+            <!--house start-->
+            <div class="swiper-slide post-module">
+
+              <form action="">
+                <button onclick="sendtitle()" style="background-color:transparent; border:none;">View</button>
+
+                <div class="thumbnail">
+
+                  <img id="image1" src="images/aprt1.jpg" />
+                </div>
+                <div class="post-content" style="top:285px">
+                  <h1 class="title" id="title" name="title">The Hobbit House</h1>
+                  <p>The Pub is a cool and comfortable private one bedroom guesthouse in my beautiful backyard.</p>
+                  <div class="post-meta">
+                    <span>2 guests</span>
+                    <span>1.38 km</span>
+                  </div>
+                  <div class="heart">
+                    <div class="like"></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+
+            <div class="swiper-slide post-module">
+              <a href="house">
+                <div class="thumbnail">
+
+                  <img id="image1" src="images/aprt2.jpg" />
+                </div>
+                <div class="post-content" style="top:285px">
+                  <h1 class="title" id="title">Cottage to beach</h1>
+                  <p>Around the corner from world famous Beach!</p>
+                  <div class="post-meta">
+                    <span>4 guests</span>
+                    <span>2.64 km</span>
+                  </div>
+                  <div class="heart">
+                    <div class="like"></div>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+
+
+            <div class="swiper-slide post-module">
+              <a href="house">
+                <div class="thumbnail">
+
+                  <img id="image1" src="images/aprt3.jpg" />
+                </div>
+                <div class="post-content" style="top:285px">
+                  <h1 class="title" id="title">Upper Kirby</h1>
+                  <p>Entire upstairs of hm with private side stair entrance. </p>
+                  <div class="post-meta">
+                    <span>3 guests</span>
+                    <span>2.74 km</span>
+                  </div>
+                  <div class="heart">
+                    <div class="like"></div>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+
+
+            <div class="swiper-slide post-module">
+              <a href="house">
+                <div class="thumbnail">
+
+                  <img id="image1" src="images/aprt4.jpg" />
+                </div>
+                <div class="post-content" style="top:285px">
+                  <h1 class="title" id="title">The Joshua Tree House</h1>
+                  <p>This is a place for dreamers to reset, reflect, and create. </p>
+                  <div class="post-meta">
+                    <span>6 guests</span>
+                    <span>4.31 km</span>
+                  </div>
+                  <div class="heart">
+                    <div class="like"></div>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+
+
+            <div class="swiper-slide post-module">
+              <a href="house">
+                <div class="thumbnail">
+
+                  <img id="image1" src="images/aprt5.jpg" />
+                </div>
+                <div class="post-content" style="top:285px">
+                  <h1 class="title" id="title">Off-grid itHouse</h1>
+                  <p>The setting of the house is remote and serene, a quiet refuge from everything.
+
+                  </p>
+                  <div class="post-meta">
+                    <span>2 guests</span>
+                    <span>1.5 km</span>
+                  </div>
+                  <div class="heart">
+                    <div class="like"></div>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+
+
+            <div class="swiper-slide post-module">
+              <a href="house.html">
+                <div class="thumbnail">
+
+                  <img id="image1" src="images/aprt6.jpg" />
+                </div>
+                <div class="post-content" style="top:285px">
+                  <h1 class="title" id="title">'Silo Studio' Cottage</h1>
+                  <p>Charming and romantic</p>
+                  <div class="post-meta">
+                    <span>2 guests</span>
+                    <span>4.32 km</span>
+                  </div>
+                  <div class="heart">
+                    <div class="like"></div>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+
+
+            <div class="swiper-slide post-module">
+              <a href="house">
+                <div class="thumbnail">
+
+                  <img id="image1" src="images/aprt7.jpg" />
+                </div>
+                <div class="post-content" style="top:285px">
+                  <h1 class="title" id="title">Dreamy Tropical Tree House</h1>
+                  <p>Upon entering, you will notice that natural sunlight flood into the house.</p>
+                  <div class="post-meta">
+                    <span>2 guests</span>
+                    <span>5.67 km</span>
+                  </div>
+                  <div class="heart">
+                    <div class="like"></div>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+
+
+            <div class="swiper-slide post-module">
+              <a href="house">
+                <div class="thumbnail">
+
+                  <img id="image1" src="images/aprt8.jpg" />
+                </div>
+                <div class="post-content" style="top:285px">
+                  <h1 class="title" id="title">Warm Cottage</h1>
+                  <p>The two-story cottage has a charming bedroom with 35 foot high conical ceiling.</p>
+                  <div class="post-meta">
+                    <span>4 guests</span>
+                    <span>4.35 km</span>
+                  </div>
+                  <div class="heart">
+                    <div class="like"></div>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+
+
+            <div class="swiper-slide post-module">
+              <a href="house">
+                <div class="thumbnail">
+
+                  <img id="image1" src="images/aprt9.jpg" />
+                </div>
+                <div class="post-content" style="top:285px">
+                  <h1 class="title" id="title">Perfectly located Castro</h1>
+                  <p>Restaurants are plentiful and beautiful Dolores Park is quite close.</p>
+                  <div class="post-meta">
+                    <span>1 guests</span>
+                    <span>5.74 km</span>
+                  </div>
+                  <div class="heart">
+                    <div class="like"></div>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+
+
+            <div class="swiper-slide post-module">
+              <a href="house">
+                <div class="thumbnail">
+
+                  <img id="image1" src="images/aprt10.jpg" />
+                </div>
+                <div class="post-content" style="top:285px">
+                  <h1 class="title" id="title">Houseboat</h1>
+                  <p>Welcome aboard Pirate's Life! 1 of 6 stay-aboard rentals we offer. </p>
+                  <div class="post-meta">
+                    <span>4 guests</span>
+                    <span>5.23 km</span>
+                  </div>
+                  <div class="heart">
+                    <div class="like"></div>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+
+
+          </div>
+          <script>
+            $(window).load(function() {
+              $('.post-module').hover(function() {
+                $(this).find('.description').stop().animate({
+                  height: "toggle",
+                  opacity: "toggle"
+                }, 300);
+              });
+            });
+
+            function sendtitle() {
+              var x = document.getElementById("title").getElementsByTagName("h1")[0].innerHTML;
+              x.submit();
+            }
+
+
+
+            /*
+
+
+                var like = document.querySelector(".like");
+                count = 0;
+                like.onclick = function() {
+                  count += 1;
+                  if (count % 2 == 1) {
+                    if (like.classList.contains("anim-like")) {
+                      return;
+                    } else {
+                      like.className += " anim-like";
+                    }
+                  } else {
+                    like.className = "like";
+                  }
+                }
+            */
+          </script>
+
+          <div class="swiper-button-prev swiper-button-enabled"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <div class="endphoto"></div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+  <script>
+    var mySwiper = new Swiper('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      slidesPerView: 4,
+      loop: false,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+  <script src="javascripts/post.js"></script>
+  <script src="javascripts/selection.js"></script>
+  <script src="javascripts/notification.js"></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+<script src="javascripts/load_house.js"></script>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/profile.css">
+</head>
+<body onload="updateprofile()">
+
+<div class="icon-bar">
+  <a class="active" href="mainpage_login"><i class="fa fa-home"></i></ a> 
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="avatar-container">
+            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" id = "portrait" class="avatar" alt="avatar">
+        </div>
+        <br>
+
+
+        <div class="mybutton">
+            <a href="seditprofile" style="color:cadetblue"><button class="openbutton" style="background-color:lightgrey;">
+                Edit Profile
+            </button></a>
+        </div>
+
+
+    </div>
+
+    <div class="column">
+        <p class="formtitle">User Profile</p>
+        <table>
+
+            <tr>
+                <th>Name</th>
+                <td id="name">David</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td id= "gender">Male</td>
+            </tr>
+            <tr>
+                <th>University</th>
+                <td id="university">The Chinese University of Hong Kong</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td id="contact">1234 5678</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td id="email">abc@abc.com</td>
+            </tr>
+
+
+        </table>
+    </div><!--/col-6-->
+
+</div>
+<!--posts-->
+<h2 class="sectiontitle">Your posts...</h2>
+<div class="container">
+    <div class="grid-container">
+
+        <div class="card">
+            <img src="images/people.jpg" alt="Avatar"style="width:100%">
+            <h5 class="card-title">Find Roomate</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button>View</button>
+        </div>
+
+        <div class="card">
+            <img src="images/people.jpg" alt="Avatar"style="width:100%">
+            <h5 class="card-title">Find Roomate</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button>View</button>
+        </div>
+
+        <div class="card">
+            <img src="images/people.jpg" alt="Avatar"style="width:100%">
+            <h5 class="card-title">Find Roomate</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button>View</button>
+        </div>
+        <div class="card">
+            <img src="images/people.jpg" alt="Avatar"style="width:100%">
+            <h5 class="card-title">Find Roomate</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button>View</button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function openForm() {
+        var e = document.getElementById("chatbox");
+
+        e.style.display = ((e.style.display != "none") ? "none" : "block");
+    }
+
+    function closeForm() {
+        document.getElementById("chatbox").style.display = "none";
+    }
+
+    function updateprofile(){
+        document.getElementById("name").innerHTML=("<%=user[0]['name']%>");
+        document.getElementById("gender").innerHTML=("<%=user[0]['gender']%>");
+        document.getElementById("university").innerHTML=("<%=user[0]['university']%>");
+        document.getElementById("email").innerHTML=("<%=user[0]['email']%>");
+        document.getElementById("contact").innerHTML=("<%=user[0]['contact']%>");
+        if("<%=user[0]['portraitPath']%>"){document.getElementById("portrait").src=("<%=user[0]['portraitPath']%>");}
+    }
+</script>
+
+</body>
+</html>

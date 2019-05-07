@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/postaccommodation.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+<!-- multistep form -->
+<form id="accommo_form" action="" method= "post" enctype="multipart/form-data">
+    <h1>Post your accomodation:</h1>
+    <!-- One "tab" for each step in the form: -->
+    <!--page 1 ask for address, type, number of tenants-->
+    <div class="tab">
+        <p class="title">I. Accommodation Information (1) </p>
+        <hr>
+        <p class="lefttext">Accommodation type</p>
+        <select id="type" name="type">
+            <option value="entireflat">Entire Flat</option>
+            <option value="single">Single Room</option>
+            <option value="shared">Shared Room</option>
+        </select>
+
+        <p class="lefttext">You can accommodate ... guests</p>
+        <input type="number" name="guests" min="0" step="1">
+        <p class="lefttext">Size of your accommodation (sq. ft.)</p>
+        <input type="number" name="size">
+        <p class="lefttext">Beds for guests</p>
+        <input type="number" name="bed" min="0" step="1">
+        <p class="lefttext">Bathrooms for guests</p>
+        <input type="number" name="bath" min="0" step="1">
+
+    </div>
+
+    <!--page2 description,image,address-->
+    <div class="tab">
+        <p class="title">II. Accommodation Information (2) </p>
+        <hr>
+        <p style="text-align:left;">Name</p>
+        <input type="text" name="name" placeholder="E.g. 鄰近中大, 適合4人居住!" />
+        <p style="text-align:left;">Description</p>
+        <input type="text" name="description" placeholder="可吸煙,有基本設備, 可隨時入住!" />
+
+
+        <p style="text-align:left;">Please upload at least 2 pictures about your house, and the first picture you choose will be the cover (jpg, png, gif)</p>
+        <div class="file-drop-area">
+            <span class="fake-btn">Choose files</span>
+            <span class="file-msg">drag and drop files here</span>
+            <input class="file-input" type="file" multiple id="photo" name="photo" accept="image/*">
+        </div>
+
+        <!--map-->
+        <p style="text-align:left;">Address</p>
+        <input id="pac-input" name= "address" class="controls" type="text" placeholder="Enter your address">
+        <div id="map"></div>
+
+    </div>
+
+    <!--page3 facilities-->
+    <div class="tab">
+        <p class="title">III. Accommodation Facilities </p>
+        <p>Basic</p>
+        <hr>
+        <div class="cb-field">
+            <ul class="cbtag">
+                <li><input type="hidden" name="kitchen" value="false"></li>
+                <li><input type="checkbox" name="kitchen" value="true" id="kitchen"><label for="kitchen">Kitchen</label></li>
+                <li><input type="hidden" name="gym" value="false"></li>
+                <li><input type="checkbox" name="gym" value="true" id="gym"><label for="gym">Gym Room</label></li>
+                <li><input type="hidden" name="elevator" value="false"></li>
+                <li><input type="checkbox" name="elevator" value="true" id="elevator"><label for="elevator">Elevator</label></li>
+                
+                <br>
+                <li><input type="hidden" name="tv" value="false"></li>
+                <li><input type="checkbox" name="tv" value="true" id="tv"><label for="tv">TV</label></li>
+                <li><input type="hidden" name="heating" value="false"></li>
+                <li><input type="checkbox" name="heating" value="true" id="heating"><label for="heating">Heating</label></li>
+                <li><input type="hidden" name="aircon" value="false"></li>
+                <li><input type="checkbox" name="aircon" value="true" id="aircon"><label for="aircon">Air-conditioning</label></li>
+                <li><input type="hidden" name="wifi" value="false"></li>
+                <li><input type="checkbox"name="wifi" value="true" id="wifi"><label for="wifi">Wifi</label></li>
+                
+            </ul>
+        </div>
+
+        <p>Utilities and other expenses</p>
+        <hr>
+        <p>Electricity Fees</p>
+        <div class="switch-field">
+            <input type="radio" id="lelectricity" name="electricity" value="lelectricity" checked>
+            <label for="lelectricity" >Paid by landlord</label>
+            <input type="radio" id="selectricity" name="electricity" value="selectricity">
+            <label for="selectricity" >Paid by tenant</label>
+        </div>
+
+        <p>Water Expenses</p>
+        <div class="switch-field">
+            <input type="radio" id="lwater" name="water" value="lwater" checked/>
+            <label for="lwater">Paid by landlord</label>
+            <input type="radio" id="swater" name="water" value="swater" />
+            <label for="swater">Paid by tenant</label>
+        </div>
+
+        <p>Management Fees</p>
+        <div class="switch-field">
+            <input type="radio" id="lmgnt" name="mgnt" value="lmgnt" checked/>
+            <label for="lmgnt">Paid by landlord</label>
+            <input type="radio" id="smgnt" name="mgnt" value="smgnt" />
+            <label for="smgnt">Paid by tenant</label>
+        </div>
+
+    </div>
+
+    <!--page4 price and availability-->
+    <div class="tab">
+        <p class="lefttext">Rent per month (HKD)</p>
+        <input type="number" id="price" name="price" placeholder="Rent" min="0">
+        <p class="lefttext">Please state the start date of rental and minimum duration</p>
+       <input type="date" placeholder="Start Day" name="startday" required min="today">
+        <select id="duration" name="duration" placeholder="Duration" required>
+            <option value="3month">3 Months</option>
+            <option value="6month">6 Months</option>
+            <option value="1yr">1 Year</option>
+            <option value="2yr">2 Years</option>
+            <option value="more2yr">More than 2 Years</option>
+        </select>
+
+
+    </div>
+
+    <!--page5 confirmation-->
+    <div class="tab">
+        <h2 class="title"> Please Submit</h2>
+        <p>Click the below button to submit your form!</p>
+    </div>
+
+
+    <div style="overflow:auto;">
+        <div style="float:right;">
+            <button type="button" id="previous-button" onclick="nextPage(-1)">Previous</button>
+            <button type="button" id="next-button" onclick="nextPage(1)">Next</button>
+        </div>
+    </div>
+
+
+
+    <!-- indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+        <span class="progressbar"></span>
+        <span class="progressbar"></span>
+        <span class="progressbar"></span>
+        <span class="progressbar"></span>
+        <span class="progressbar"></span>
+    </div>
+</form>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg6wC2yYzvWc48sJ_QKjKxcDbGehDP8J0&libraries=places&callback=initAutocomplete"
+            async defer></script>
+    <script src="javascripts/postaccommodation.js" type="text/javascript"></script>
+
+
+
+</body>
+</html>

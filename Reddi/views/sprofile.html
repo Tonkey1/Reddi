@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="stylesheets/profile.css">
+</head>
+<body>
+
+<div class="icon-bar">
+  <a class="active" href="mainpage_login"><i class="fa fa-home"></i></ a> 
+</div>
+
+<div class="row">
+    <div class="column">
+        <div class="avatar-container">
+            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar" alt="avatar">
+        </div>
+        <br>
+
+
+        <div class="mybutton">
+            <button class="openbutton" onclick="openForm()">
+                Start your chat!
+            </button>
+        </div>
+
+        <!--this is the pop up chat box-->
+
+    </div>
+
+    <div class="column">
+        <p class="formtitle">User Profile</p>
+        <table>
+
+            <tr>
+                <th>Name</th>
+                <td>David</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>Male</td>
+            </tr>
+            <tr>
+                <th>University</th>
+                <td>The Chinese University of Hong Kong</td>
+            </tr>
+
+
+        </table>
+    </div><!--/col-6-->
+
+</div>
+<!--card-->
+<h2 class="sectiontitle">His/ her posts...</h2>
+<div class="container">
+    <div class="grid-container">
+
+        <div class="card">
+            <img src="images/people.jpg" alt="Avatar"style="width:100%">
+            <h5 class="card-title">Find Roomate</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button>View</button>
+        </div>
+
+        <div class="card">
+            <img src="images/people.jpg" alt="Avatar"style="width:100%">
+            <h5 class="card-title">Find Roomate</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button>View</button>
+        </div>
+
+        <div class="card">
+            <img src="images/people.jpg" alt="Avatar"style="width:100%">
+            <h5 class="card-title">Find Roomate</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button>View</button>
+        </div>
+        <div class="card">
+            <img src="images/people.jpg" alt="Avatar"style="width:100%">
+            <h5 class="card-title">Find Roomate</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button>View</button>
+        </div>
+
+    </div>
+</div>
+
+
+<!--pop up chatbox-->
+<div class="chatbox"  id="chatbox">
+    <div class="chatbox-content">
+
+        <!--this div element defines close popup chatbox action -->
+        <div class="close-button" role="button" onclick="closeForm()">
+            <div class="times cancel">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+
+        <!--this div element defines several chat messages -->
+        <div class="chatlogs">
+            <div class="chat friend">
+                <div class="user-photo"><img src="images/icon2.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+            </div>
+
+            <div class="chat self">
+                <div class="user-photo"><img src="images/icon.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+            </div>
+
+            <div class="chat friend">
+                <div class="user-photo"><img src="images/icon2.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+            </div>
+
+            <div class="chat self">
+                <div class="user-photo"><img src="images/icon.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+            </div>
+
+            <div class="chat friend">
+                <div class="user-photo"><img src="images/icon2.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+            </div>
+
+            <div class="chat self">
+                <div class="user-photo"><img src="images/icon.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+            </div>
+
+            <div class="chat friend">
+                <div class="user-photo"><img src="images/icon2.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+            </div>
+
+            <div class="chat self">
+                <div class="user-photo"><img src="images/icon.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+            </div>
+
+            <div class="chat friend">
+                <div class="user-photo"><img src="images/icon2.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet.</p>
+            </div>
+
+            <div class="chat self">
+                <div class="user-photo"><img src="images/icon.jpg"></div>
+                <p class="chat-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat rem culpa, aperiam voluptatibus, et modi deleniti repellendus corrupti itaque adipisci!</p>
+            </div>
+
+        </div>
+        <div class="chat-form">
+            <textarea name="name"></textarea>
+            <button>Send</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function openForm() {
+        var e = document.getElementById("chatbox");
+
+        e.style.display = ((e.style.display != "none") ? "none" : "block");
+    }
+
+    function closeForm() {
+        document.getElementById("chatbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
